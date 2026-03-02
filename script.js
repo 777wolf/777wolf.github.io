@@ -1,4 +1,6 @@
-// Smooth Scroll
+/* =========================
+   SMOOTH SCROLL
+========================= */
 document.querySelectorAll("a[href^='#']").forEach(anchor => {
     anchor.addEventListener("click", function (e) {
         e.preventDefault();
@@ -9,59 +11,91 @@ document.querySelectorAll("a[href^='#']").forEach(anchor => {
     });
 });
 
-// Typing Effect
-const texts = [
-    "Cybersecurity Analyst",
-    "SOC Enthusiast",
-    "Active Directory Lab Builder",
-    "Detection Engineering Learner"
-];
 
-let count = 0;
-let index = 0;
+/* =========================
+   TYPING EFFECT
+========================= */
+const typingElement = document.getElementById("typing");
 
-function typeEffect() {
-    if (count >= texts.length) count = 0;
+if (typingElement) {
 
-    const currentText = texts[count];
-    document.getElementById("typing").textContent =
-        currentText.slice(0, ++index);
+    const texts = [
+        "SOC Analyst | Detection Engineering",
+        "Active Directory Security Monitoring",
+        "Splunk SIEM | Threat Detection",
+        "Blue Team & Defensive Security"
+    ];
 
-    if (index === currentText.length) {
-        setTimeout(() => {
-            index = 0;
-            count++;
-        }, 1500);
-    }
+    let count = 0;
+    let index = 0;
+    let currentText = "";
+    let letter = "";
 
-    setTimeout(typeEffect, 100);
+    (function typeEffect() {
+
+        if (count === texts.length) {
+            count = 0;
+        }
+
+        currentText = texts[count];
+        letter = currentText.slice(0, ++index);
+
+        typingElement.textContent = letter;
+
+        if (letter.length === currentText.length) {
+            setTimeout(() => {
+                index = 0;
+                count++;
+            }, 1500);
+        }
+
+        setTimeout(typeEffect, 90);
+    })();
 }
 
-typeEffect();
+
+/* =========================
+   GITHUB REPOSITORY FETCH
+========================= */
+const repoContainer = document.getElementById("repo-container");
+
+if (repoContainer) {
+
+    fetch("https://api.github.com/users/777wolf/repos")
+        .then(response => response.json())
+        .then(data => {
+
+            if (!Array.isArray(data)) return;
+
+            repoContainer.innerHTML = "";
+
+            data
+                .sort((a, b) => b.stargazers_count - a.stargazers_count)
+                .slice(0, 6)
+                .forEach(repo => {
+
+                    const card = document.createElement("div");
+                    card.classList.add("repo-card");
+
+                    card.innerHTML = `
+                        <h3>${repo.name}</h3>
+                        <p>${repo.description || "No description available."}</p>
+                        <a href="${repo.html_url}" target="_blank">View Repository →</a>
+                    `;
+
+                    repoContainer.appendChild(card);
+                });
+
+        })
+        .catch(error => console.error("GitHub API Error:", error));
+}
 
 
-// GitHub Fetch
-fetch("https://api.github.com/users/YOUR_GITHUB_USERNAME/repos")
-    .then(res => res.json())
-    .then(data => {
-        const container = document.getElementById("repo-container");
-        if (!data || !Array.isArray(data)) return;
-
-        data.slice(0, 6).forEach(repo => {
-            const card = document.createElement("div");
-            card.classList.add("repo-card");
-            card.innerHTML = `
-                <h3>${repo.name}</h3>
-                <p>${repo.description || "No description available"}</p>
-                <a href="${repo.html_url}" target="_blank">View Repository</a>
-            `;
-            container.appendChild(card);
-        });
-    })
-    .catch(err => console.error("GitHub API error:", err));
-
-// ===== PROJECT DATA =====
+/* =========================
+   PROJECT DATA
+========================= */
 const projects = {
+
     adlab: {
         title: "AI-Enhanced Active Directory SOC Lab | Splunk | Detection Engineering",
 
@@ -70,33 +104,29 @@ const projects = {
             "Ubuntu Server (Splunk Enterprise – CLI Based)",
             "Windows Server 2019 (Domain Controller – DC01)",
             "Windows 10 (Domain-Joined Client)",
-            "VirtualBox Internal Network (Isolated SOC Lab)"
+            "VirtualBox Internal Network"
         ],
 
         attacks: [
             "Brute Force Attack",
-            "Password Spraying Attack",
-            "Lateral Movement (SMB Logon – Logon Type 3)",
-            "Privilege Escalation (Admin Logon Monitoring)",
-            "Login Volume Spike (AI Behavioral Anomaly Simulation)"
+            "Password Spraying",
+            "Lateral Movement (SMB Logon Type 3)",
+            "Privilege Escalation Monitoring",
+            "Login Volume Spike (Anomaly Simulation)"
         ],
 
         detection: [
-            "Event ID 4624 – Successful Logon Monitoring",
-            "Event ID 4625 – Failed Logon Detection",
-            "Event ID 4672 – Special Privilege Assignment",
-            "Event ID 4728 / 4732 / 4756 – Group Membership Changes",
-            "Logon Type 3 & 10 Monitoring",
+            "Event ID 4624 & 4625 Authentication Monitoring",
+            "Event ID 4672 Privilege Assignment Tracking",
+            "Group Membership Change Monitoring",
             "Brute Force Correlation Rule (SPL)",
-            "Password Spray Detection Rule",
-            "Lateral Movement Monitoring Query",
-            "Privilege Escalation Alert Logic",
-            "AI-Based Login Anomaly Detection (2-Sigma Statistical Model)",
-            "Risk Scoring Model for Suspicious IP Prioritization"
+            "Password Spray Detection Logic",
+            "AI-Based 2-Sigma Login Anomaly Model",
+            "Risk Scoring for Suspicious IP Prioritization"
         ],
 
         tools: [
-            "Active Directory (AD DS)",
+            "Active Directory",
             "Windows Event Logs",
             "Splunk Enterprise",
             "Splunk Universal Forwarder",
@@ -126,7 +156,7 @@ const projects = {
             "Event ID 4625 – Failed Login Monitoring",
             "Event ID 4624 – Successful Login Detection",
             "Event ID 4688 – Process Creation Monitoring",
-            "Attacker IP Identification using SPL",
+            "Attacker IP Identification via SPL",
             "Real-Time Alert Rule Configuration"
         ],
 
@@ -143,14 +173,19 @@ const projects = {
 };
 
 
-// ===== MODAL FUNCTION =====
+/* =========================
+   MODAL FUNCTIONALITY
+========================= */
+
+const modal = document.getElementById("projectModal");
+const modalContent = document.getElementById("modalContent");
+
 function openProject(projectKey) {
 
     const project = projects[projectKey];
-    const modal = document.getElementById("projectModal");
-    const content = document.getElementById("modalContent");
+    if (!project) return;
 
-    content.innerHTML = `
+    modalContent.innerHTML = `
         <h2>${project.title}</h2>
 
         <h3>Environment</h3>
@@ -167,15 +202,29 @@ function openProject(projectKey) {
     `;
 
     modal.classList.add("show");
-
-    // Disable background scroll
     document.body.style.overflow = "hidden";
 }
 
 function closeProject() {
-    const modal = document.getElementById("projectModal");
     modal.classList.remove("show");
-
-    // Enable background scroll
     document.body.style.overflow = "auto";
 }
+
+
+/* =========================
+   CLOSE MODAL BEHAVIORS
+========================= */
+
+// Close when clicking outside
+modal.addEventListener("click", function (e) {
+    if (e.target === this) {
+        closeProject();
+    }
+});
+
+// Close with ESC key
+document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && modal.classList.contains("show")) {
+        closeProject();
+    }
+});
