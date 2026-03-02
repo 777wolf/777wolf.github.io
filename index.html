@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TUSHAR KUMARSSWAMI | Cybersecurity Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <h2 class="logo">TUSHAR KUMAR SWAMI</h2>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#tryhackme">TryHackMe</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1><span id="typing"></span></h1>
+        <p>Active Directory Security | SOC Monitoring | Detection Engineering | Blue Team | Defensive Security</p>
+        <a href="assets/Tushar Kumar Swami Resume.pdf" class="btn">Download Resume</a>
+        <a href="https://github.com/777wolf" class="btn-outline" target="_blank">GitHub</a>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            Cybersecurity enthusiast with hands-on experience in building a real-time SOC monitoring lab
+            using Splunk SIEM. Skilled in log analysis, attack simulation, brute-force detection, and dashboard
+            creation. Practical experience with Kali Linux, Windows Security Logs, and SIEM configuration.
+            Passionate about SOC operations, threat detection, and vulnerability assessment.
+        </p>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+
+        <div class="project-card">
+            <h3>AI-Enhanced Active Directory SOC Lab | Splunk | Detection Engineering</h3>
+            <p>AI-Enhanced Active Directory SOC Lab – Designed and monitored a domain-based lab environment using Splunk
+                Enterprise. Implemented detection rules for brute force, password spraying, lateral movement, and
+                privilege escalation. Developed AI-based login anomaly detection using statistical baseline modeling and
+                built a risk scoring system for prioritizing authentication threats.</p>
+            <button onclick="openProject('adlab')">View Details</button>
+        </div>
+
+        <div class="project-card">
+            <h3>Real-Time Cyber Attack Detection using Splunk SIEM</h3>
+            <p>Designed and implemented a Security Operations Center (SOC) lab environment using Splunk Enterprise to
+                monitor authentication activity and detect suspicious behavior in real time.Configured centralized log
+                collection from Windows systems and developed detection rules for brute-force
+                attacks, suspicious login patterns, and abnormal process execution.Built SPL-based correlation searches
+                to identify attacker IP addresses, repeated authentication
+                failures, and potential account compromise scenarios.Developed statistical monitoring queries to
+                establish login activity baselines and detect deviations
+                indicative of anomalous behavior.Implemented alert prioritization logic to flag high-risk authentication
+                events and improve incident
+                response efficiency.</p>
+            <button onclick="openProject('soclab')">View Details</button>
+        </div>
+    </section>
+
+    <!-- Dynamic Project Modal -->
+    <div id="projectModal" class="modal">
+        <span class="close" onclick="closeProject()">&times;</span>
+        <div class="modal-box" id="modalContent">
+            <!-- Content will be injected dynamically -->
+        </div>
+    </div>
+
+    <section id="certifications">
+        <h2>Certifications</h2>
+
+        <div class="cert-grid">
+
+            <div class="cert-card">
+                <h3>Google Cybersecurity Professional Certificate</h3>
+                <p>Coursera | 8-course program covering Linux, SQL, Python, SIEM, IDS, risk management, and incident
+                    response. Built hands-on skills for entry-level SOC roles</p>
+                <div class="cert-links">
+                    <a href="assets/certificates/Coursera FJO236ZFJM2H.pdf" target="_blank">View Certificate</a>
+                    <a href="https://coursera.org/verify/professional-cert/FJO236ZFJM2H" target="_blank">Verify</a>
+                </div>
+            </div>
+
+            <div class="cert-card">
+                <h3>Pre Security & Cyber Security 101</h3>
+                <p>TryHackMe | Foundational Offensive & Defensive Concepts</p>
+                <div class="cert-links">
+                    <a href="assets/certificates/THM-WKUYA4YOY3.pdf" target="_blank">View Certificate</a>
+                    <a href="assets/certificates/THM-XFGDTKVGAB.pdf" target="_blank">View Certificate</a>
+                    <a href="https://tryhackme.com/p/vaishnavt700" target="_blank">Profile</a>
+                </div>
+            </div>
+
+            <div class="cert-card">
+                <h3>Ethical Hacking Certificate</h3>
+                <p>NPTEL(IIT Kharagpur) | 12-week course on ethical hacking concepts, network security, and attack
+                    methodologies</p>
+                <div class="cert-links">
+                    <a href="assets/certificates/Ethical Hacking NPTL.pdf" target="_blank">View Certificate</a>
+                </div>
+            </div>
+
+            <div class="cert-card">
+                <h3>Deloitte Australia Cyber Simulation</h3>
+                <p>Forage | Involving reading web activity logs
+                    Supported a client in a cyber security breach
+                    Answered questions to identify suspicious user activity</p>
+                <div class="cert-links">
+                    <a href="assets/certificates/Deloitte Australia's Cyber Job Simulation.pdf" target="_blank">View Certificate</a>
+                </div>
+            </div>
+
+            <div class="cert-card">
+                <h3>Mastercard Cybersecurity Simulation</h3>
+                <p>Forage | I served as an analyst on Mastercard’s Security Awareness Team
+                    Helped identify and report security threats such as phishing
+                    Analyzed and identified which areas of the business needed more robust security training and
+                    implemented training courses and procedures for those teams</p>
+                <div class="cert-links">
+                    <a href="assets/certificates/Matercard Cybersecurity Job Simulation.pdf" target="_blank">View Certificate</a>
+                </div>
+            </div>
+
+            <div class="cert-card">
+                <h3>Tata Cybersecurity Analyst Simulation</h3>
+                <p>Forage | Worked on Identity and Access Management (IAM) projects aligned with Tata Consultancy
+                    Services’ cybersecurity consulting practices. Gained practical knowledge of IAM principles, security
+                    best practices, and business-aligned security strategy, while delivering clear technical
+                    documentation and presentations</p>
+                <div class="cert-links">
+                    <a href="assets/certificates/Tata Cybersecurity Analyst Job Simulation.pdf" target="_blank">View Certificate</a>
+                </div>
+            </div>
+
+            <div class="cert-card">
+                <h3>Ethical Hacking Certificate</h3>
+                <p>Tutedude | Penetration testing fundamentals, reconnaissance, vulnerability assessment, and basic
+                    exploitation techniques.</p>
+                <div class="cert-links">
+                    <a href="assets/certificates/Ethical Hacking certificate Tutedude_TD-TUSH-EH-2253.pdf" target="_blank">View Certificate</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="tryhackme">
+
+        <h2>TryHackMe Profile</h2>
+        <p>Hands-on labs in Offensive Security, SOC, and Active Directory.</p>
+        <a href="https://tryhackme.com/p/vaishnavt700" target="_blank" class="thm-link">
+            View TryHackMe Profile →
+        </a>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: tusharswami2004@email.com</p>
+        <p>LinkedIn: linkedin.com/in/tushar-kumar-swami-785664296/</p>
+    </section>
+
+    <footer>
+        <p>© 2026 Tushar Kumar Swami | Cybersecurity Portfolio</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
