@@ -97,7 +97,7 @@ if (repoContainer) {
 const projects = {
 
     adlab: {
-        title: "AI-Enhanced Active Directory SOC Lab | Splunk | Detection Engineering",
+        title: "Active Directory Security Monitoring Lab | Splunk | Detection Engineering",
 
         environment: [
             "Kali Linux (Attacker)",
@@ -137,7 +137,7 @@ const projects = {
     },
 
     soclab: {
-        title: "Real-Time SOC Monitoring Lab | Splunk SIEM | Threat Detection",
+        title: "Real-Time Cyber Attack Detection using Splunk SIEM | Splunk SIEM | Threat Detection",
 
         environment: [
             "Kali Linux (Attacker)",
