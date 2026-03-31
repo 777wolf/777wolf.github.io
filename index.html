@@ -4,187 +4,384 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TUSHAR KUMARSSWAMI | Cybersecurity Portfolio</title>
+    <title>TUSHAR KUMAR SWAMI | Cybersecurity Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@400;700;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+    <!-- Scanline overlay -->
+    <div class="scanlines"></div>
+
+    <!-- Particle canvas -->
+    <canvas id="matrix-canvas"></canvas>
+
     <header>
         <nav>
-            <h2 class="logo">TUSHAR KUMAR SWAMI</h2>
+            <div class="logo">
+                <span class="logo-bracket">[</span>
+                <span class="logo-text">TKS</span>
+                <span class="logo-bracket">]</span>
+                <span class="logo-cursor">_</span>
+            </div>
             <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#tryhackme">TryHackMe</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about"><span class="nav-num">01.</span>About</a></li>
+                <li><a href="#projects"><span class="nav-num">02.</span>Projects</a></li>
+                <li><a href="#certifications"><span class="nav-num">03.</span>Certs</a></li>
+                <li><a href="#tryhackme"><span class="nav-num">04.</span>TryHackMe</a></li>
+                <li><a href="#contact"><span class="nav-num">05.</span>Contact</a></li>
             </ul>
+            <div class="nav-status">
+                <span class="status-dot"></span>
+                <span class="status-text">SYSTEMS ONLINE</span>
+            </div>
         </nav>
     </header>
 
     <section class="hero">
-        <h1><span id="typing"></span></h1>
-        <p>Active Directory Security | SOC Monitoring | Detection Engineering | Blue Team | Defensive Security</p>
-        <a href="assets/Tushar_Kumar_Swami_Resume.pdf" class="btn">Download Resume</a>
-        <a href="https://github.com/777wolf" class="btn-outline" target="_blank">GitHub</a>
+        <div class="hero-eyebrow">
+            <span class="eyebrow-line"></span>
+            <span class="eyebrow-text">// SECURITY ANALYST</span>
+            <span class="eyebrow-line"></span>
+        </div>
+        <h1>TUSHAR<br><span class="name-accent">KUMAR SWAMI</span></h1>
+        <div class="terminal-line">
+            <span class="prompt">root@soc:~$</span>
+            <span id="typing"></span>
+            <span class="cursor-blink">█</span>
+        </div>
+        <p class="hero-tags">
+            <span class="tag">Active Directory</span>
+            <span class="tag">SOC Monitoring</span>
+            <span class="tag">Detection Engineering</span>
+            <span class="tag">Blue Team</span>
+            <span class="tag">Splunk SIEM</span>
+        </p>
+        <div class="hero-actions">
+            <a href="assets/Tushar_Kumar_Swami_Resume.pdf" class="btn">
+                <span class="btn-icon">↓</span> Download Resume
+            </a>
+            <a href="https://github.com/777wolf" class="btn-outline" target="_blank">
+                <span class="btn-icon">⌥</span> GitHub
+            </a>
+        </div>
+        <div class="hero-stats">
+            <div class="stat">
+                <div class="stat-num">2</div>
+                <div class="stat-label">SIEM Labs</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+                <div class="stat-num">7+</div>
+                <div class="stat-label">Certifications</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+                <div class="stat-num">127+</div>
+                <div class="stat-label">THM Rooms</div>
+            </div>
+        </div>
     </section>
 
     <section id="about">
-        <h2>About Me</h2>
-        <p>
-            I am a cybersecurity enthusiast focused on Security Operations Center (SOC) monitoring and detection
-            engineering.
-
-            I have built multiple hands-on lab environments simulating real-world attack scenarios including brute-force
-            attempts, password spraying, lateral movement, and privilege escalation within Active Directory
-            environments.
-
-            My work centers around analyzing Windows Security Event Logs, developing SPL-based detection rules, building
-            correlation searches, and implementing anomaly detection techniques to identify authentication-based
-            threats.
-
-            I am actively seeking opportunities in SOC operations, threat detection, and blue team security roles where
-            I can contribute practical SIEM and log analysis skills.
-        </p>
+        <div class="section-header">
+            <span class="section-num">01</span>
+            <h2>About Me</h2>
+            <span class="section-line"></span>
+        </div>
+        <div class="about-grid">
+            <div class="about-text">
+                <p class="about-lead">Cybersecurity student specializing in SOC operations and detection engineering —
+                    building defenses from the ground up.</p>
+                <p>I've built multiple hands-on lab environments simulating real-world attack scenarios including
+                    brute-force attempts, password spraying, lateral movement, and privilege escalation within Active
+                    Directory environments.</p>
+                <p>My work centers on analyzing Windows Security Event Logs, developing SPL-based detection rules,
+                    building correlation searches, and implementing anomaly detection to identify authentication-based
+                    threats.</p>
+                <p>Actively seeking SOC operations, threat detection, and blue team roles where I can bring practical
+                    SIEM and log analysis skills to a real team.</p>
+            </div>
+            <div class="about-terminal">
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <span class="t-dot red"></span>
+                        <span class="t-dot yellow"></span>
+                        <span class="t-dot green"></span>
+                        <span class="t-title">whoami.sh</span>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="t-line"><span class="t-prompt">$</span> whoami</div>
+                        <div class="t-output">tushar_kumar_swami</div>
+                        <div class="t-line"><span class="t-prompt">$</span> cat focus.txt</div>
+                        <div class="t-output">SOC Tier 1 Analyst</div>
+                        <div class="t-output">Detection Engineering</div>
+                        <div class="t-output">Blue Team Operations</div>
+                        <div class="t-line"><span class="t-prompt">$</span> uname -r</div>
+                        <div class="t-output">BCA Final Year @ DSEU Delhi</div>
+                        <div class="t-line"><span class="t-prompt">$</span> uptime</div>
+                        <div class="t-output">Learning since 2022 — no downtime</div>
+                        <div class="t-line blink-line"><span class="t-prompt">$</span> <span
+                                class="cursor-blink2">█</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section id="projects">
-        <h2>Projects</h2>
-
-        <div class="project-card">
-            <h3>Active Directory Security Monitoring Lab | Splunk | Detection Engineering</h3>
-            <p>Active Directory Security Monitoring Lab – Designed and monitored a domain-based lab environment using Splunk
-                Enterprise. Implemented detection rules for brute force, password spraying, lateral movement, and
-                privilege escalation. Developed AI-based login anomaly detection using statistical baseline modeling and
-                built a risk scoring system for prioritizing authentication threats.</p>
-            <button onclick="openProject('adlab')">View Details</button>
+        <div class="section-header">
+            <span class="section-num">02</span>
+            <h2>Projects</h2>
+            <span class="section-line"></span>
         </div>
 
-        <div class="project-card">
-            <h3>Real-Time Cyber Attack Detection using Splunk SIEM</h3>
-            <p>Designed and implemented a Security Operations Center (SOC) lab environment using Splunk Enterprise to
-                monitor authentication activity and detect suspicious behavior in real time.Configured centralized log
-                collection from Windows systems and developed detection rules for brute-force
-                attacks, suspicious login patterns, and abnormal process execution.Built SPL-based correlation searches
-                to identify attacker IP addresses, repeated authentication
-                failures, and potential account compromise scenarios.Developed statistical monitoring queries to
-                establish login activity baselines and detect deviations
-                indicative of anomalous behavior.Implemented alert prioritization logic to flag high-risk authentication
-                events and improve incident
-                response efficiency.</p>
-            <button onclick="openProject('soclab')">View Details</button>
+        <div class="projects-grid">
+            <div class="project-card" onclick="openProject('adlab')">
+                <div class="project-num">01</div>
+                <div class="project-badge">FEATURED</div>
+                <h3>Active Directory Security Monitoring Lab</h3>
+                <p class="project-subtitle">Splunk Enterprise | Detection Engineering | MITRE ATT&CK</p>
+                <p>Domain-based lab environment with detection rules for brute force, password spraying, lateral
+                    movement, and privilege escalation. Built an AI-based login anomaly detection model with 2-sigma
+                    statistical baseline and risk scoring system.</p>
+                <div class="project-tags">
+                    <span>Splunk</span><span>Active Directory</span><span>SPL</span><span>MITRE ATT&CK</span>
+                </div>
+                <div class="project-footer">
+                    <span class="view-details">View Details →</span>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="openProject('soclab')">
+                <div class="project-num">02</div>
+                <h3>Real-Time Cyber Attack Detection</h3>
+                <p class="project-subtitle">Splunk SIEM | Threat Detection | SOC Lab</p>
+                <p>SOC lab environment for real-time authentication monitoring. Configured centralized log collection
+                    from Windows systems with detection rules for brute-force, suspicious login patterns, and abnormal
+                    process execution.</p>
+                <div class="project-tags">
+                    <span>Splunk</span><span>Hydra</span><span>Nmap</span><span>Kali Linux</span>
+                </div>
+                <div class="project-footer">
+                    <span class="view-details">View Details →</span>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Dynamic Project Modal -->
+    <!-- Modal -->
     <div id="projectModal" class="modal">
-        <span class="close" onclick="closeProject()">&times;</span>
-        <div class="modal-box" id="modalContent">
-            <!-- Content will be injected dynamically -->
-        </div>
+        <div class="modal-overlay" onclick="closeProject()"></div>
+        <div class="modal-box" id="modalContent"></div>
     </div>
 
     <section id="certifications">
-        <h2>Certifications</h2>
+        <div class="section-header">
+            <span class="section-num">03</span>
+            <h2>Certifications</h2>
+            <span class="section-line"></span>
+        </div>
 
         <div class="cert-grid">
-
             <div class="cert-card">
-                <h3>Google Cybersecurity Professional Certificate</h3>
-                <p>Coursera | 8-course program covering Linux, SQL, Python, SIEM, IDS, risk management, and incident
-                    response. Built hands-on skills for entry-level SOC roles</p>
-                <div class="cert-links">
-                    <a href="assets/certificates/Coursera FJO236ZFJM2H.pdf" target="_blank">View Certificate</a>
-                    <a href="https://coursera.org/verify/professional-cert/FJO236ZFJM2H" target="_blank">Verify</a>
+                <div class="cert-icon">◈</div>
+                <div class="cert-body">
+                    <h3>Google Cybersecurity Professional</h3>
+                    <p class="cert-issuer">Coursera</p>
+                    <p>8-course program covering Linux, SQL, Python, SIEM, IDS, risk management, and incident response.
+                    </p>
+                    <div class="cert-links">
+                        <a href="assets/certificates/Coursera FJO236ZFJM2H.pdf" target="_blank">Certificate</a>
+                        <a href="https://coursera.org/verify/professional-cert/FJO236ZFJM2H" target="_blank">Verify
+                            ↗</a>
+                    </div>
                 </div>
             </div>
 
             <div class="cert-card">
-                <h3>Pre Security & Cyber Security 101</h3>
-                <p>TryHackMe | Foundational Offensive & Defensive Concepts</p>
-                <div class="cert-links">
-                    <a href="assets/certificates/THM-WKUYA4YOY3.pdf" target="_blank">View Certificate</a>
-                    <a href="assets/certificates/THM-XFGDTKVGAB.pdf" target="_blank">View Certificate</a>
-                    <a href="https://tryhackme.com/p/vaishnavt700" target="_blank">Profile</a>
+                <div class="cert-icon">◈</div>
+                <div class="cert-body">
+                    <h3>Pre Security & Cyber Security 101</h3>
+                    <p class="cert-issuer">TryHackMe</p>
+                    <p>Foundational Offensive & Defensive Concepts. SOC Apprentice Badge earned.</p>
+                    <div class="cert-links">
+                        <a href="assets/certificates/THM-WKUYA4YOY3.pdf" target="_blank">Cert 1</a>
+                        <a href="assets/certificates/THM-XFGDTKVGAB.pdf" target="_blank">Cert 2</a>
+                        <a href="https://tryhackme.com/p/vaishnavt700" target="_blank">Profile ↗</a>
+                    </div>
                 </div>
             </div>
 
             <div class="cert-card">
-                <h3>Ethical Hacking Certificate</h3>
-                <p>NPTEL(IIT Kharagpur) | 12-week course on ethical hacking concepts, network security, and attack
-                    methodologies</p>
-                <div class="cert-links">
-                    <a href="assets/certificates/Ethical Hacking NPTL.pdf" target="_blank">View Certificate</a>
+                <div class="cert-icon">◈</div>
+                <div class="cert-body">
+                    <h3>Ethical Hacking Certificate</h3>
+                    <p class="cert-issuer">NPTEL — IIT Kharagpur</p>
+                    <p>12-week course on ethical hacking, network security, and attack methodologies.</p>
+                    <div class="cert-links">
+                        <a href="assets/certificates/Ethical Hacking NPTL.pdf" target="_blank">Certificate</a>
+                    </div>
                 </div>
             </div>
 
             <div class="cert-card">
-                <h3>Deloitte Australia Cyber Simulation</h3>
-                <p>Forage | Involving reading web activity logs
-                    Supported a client in a cyber security breach
-                    Answered questions to identify suspicious user activity</p>
-                <div class="cert-links">
-                    <a href="assets/certificates/Deloitte Australia's Cyber Job Simulation.pdf" target="_blank">View
-                        Certificate</a>
+                <div class="cert-icon">◈</div>
+                <div class="cert-body">
+                    <h3>Deloitte Cyber Simulation</h3>
+                    <p class="cert-issuer">Forage</p>
+                    <p>Analyzed web activity logs, supported a client through a cybersecurity breach, identified
+                        suspicious user activity.</p>
+                    <div class="cert-links">
+                        <a href="assets/certificates/Deloitte Australia's Cyber Job Simulation.pdf"
+                            target="_blank">Certificate</a>
+                    </div>
                 </div>
             </div>
 
             <div class="cert-card">
-                <h3>Mastercard Cybersecurity Simulation</h3>
-                <p>Forage | I served as an analyst on Mastercard’s Security Awareness Team
-                    Helped identify and report security threats such as phishing
-                    Analyzed and identified which areas of the business needed more robust security training and
-                    implemented training courses and procedures for those teams</p>
-                <div class="cert-links">
-                    <a href="assets/certificates/Matercard Cybersecurity Job Simulation.pdf" target="_blank">View
-                        Certificate</a>
+                <div class="cert-icon">◈</div>
+                <div class="cert-body">
+                    <h3>Mastercard Cybersecurity Simulation</h3>
+                    <p class="cert-issuer">Forage</p>
+                    <p>Security Awareness Team analyst role — identified phishing threats and designed targeted security
+                        training programs.</p>
+                    <div class="cert-links">
+                        <a href="assets/certificates/Matercard Cybersecurity Job Simulation.pdf"
+                            target="_blank">Certificate</a>
+                    </div>
                 </div>
             </div>
 
             <div class="cert-card">
-                <h3>Tata Cybersecurity Analyst Simulation</h3>
-                <p>Forage | Worked on Identity and Access Management (IAM) projects aligned with Tata Consultancy
-                    Services’ cybersecurity consulting practices. Gained practical knowledge of IAM principles, security
-                    best practices, and business-aligned security strategy, while delivering clear technical
-                    documentation and presentations</p>
-                <div class="cert-links">
-                    <a href="assets/certificates/Tata Cybersecurity Analyst Job Simulation.pdf" target="_blank">View
-                        Certificate</a>
+                <div class="cert-icon">◈</div>
+                <div class="cert-body">
+                    <h3>Tata Cybersecurity Analyst Simulation</h3>
+                    <p class="cert-issuer">Forage — TCS</p>
+                    <p>IAM projects aligned with TCS consulting practices — security strategy, documentation, and
+                        presentations.</p>
+                    <div class="cert-links">
+                        <a href="assets/certificates/Tata Cybersecurity Analyst Job Simulation.pdf"
+                            target="_blank">Certificate</a>
+                    </div>
                 </div>
             </div>
 
             <div class="cert-card">
-                <h3>Ethical Hacking Certificate</h3>
-                <p>Tutedude | Penetration testing fundamentals, reconnaissance, vulnerability assessment, and basic
-                    exploitation techniques.</p>
-                <div class="cert-links">
-                    <a href="assets/certificates/Ethical Hacking certificate Tutedude_TD-TUSH-EH-2253.pdf"
-                        target="_blank">View Certificate</a>
+                <div class="cert-icon">◈</div>
+                <div class="cert-body">
+                    <h3>Ethical Hacking Certificate</h3>
+                    <p class="cert-issuer">Tutedude</p>
+                    <p>Penetration testing fundamentals, reconnaissance, vulnerability assessment, and basic
+                        exploitation techniques.</p>
+                    <div class="cert-links">
+                        <a href="assets/certificates/Ethical Hacking certificate Tutedude_TD-TUSH-EH-2253.pdf"
+                            target="_blank">Certificate</a>
+                    </div>
                 </div>
             </div>
-
         </div>
     </section>
 
     <section id="tryhackme">
+        <div class="section-header">
+            <span class="section-num">04</span>
+            <h2>TryHackMe</h2>
+            <span class="section-line"></span>
+        </div>
 
-        <h2>TryHackMe Profile</h2>
-        <p>Hands-on labs in Offensive Security, SOC, and Active Directory.</p>
-        <a href="https://tryhackme.com/p/vaishnavt700" target="_blank" class="thm-link">
-            View TryHackMe Profile →
-        </a>
+        <!-- THM Profile Card -->
+        <div class="thm-profile-card">
+
+            <!-- Top: Avatar + Identity + Link -->
+            <div class="thm-card-top">
+                <div class="thm-avatar">☠</div>
+                <div class="thm-identity">
+                    <div class="thm-username">vaishnavt700</div>
+                    <div class="thm-pills">
+                        <span class="thm-pill thm-pill-gold">TOP 3%</span>
+                        <span class="thm-pill thm-pill-cyan">[0xA][WIZARD]</span>
+                        <span class="thm-pill thm-pill-green">Student · IN</span>
+                    </div>
+                </div>
+                <a href="https://tryhackme.com/p/vaishnavt700" target="_blank" class="thm-profile-btn">
+                    View Profile →
+                </a>
+            </div>
+
+            <!-- Stats Row -->
+            <div class="thm-stats-row">
+                <div class="thm-stat-box">
+                    <div class="thm-stat-val gold">#61128</div>
+                    <div class="thm-stat-label">Global Rank</div>
+                </div>
+                <div class="thm-stat-box">
+                    <div class="thm-stat-val cyan">126</div>
+                    <div class="thm-stat-label">Rooms Done</div>
+                </div>
+                <div class="thm-stat-box">
+                    <div class="thm-stat-val purple">24</div>
+                    <div class="thm-stat-label">Badges</div>
+                </div>
+                <div class="thm-stat-box">
+                    <div class="thm-stat-val green">TOP 3%</div>
+                    <div class="thm-stat-label">Percentile</div>
+                </div>
+            </div>
+
+            <!-- Bottom: Radar + Progress -->
+            <div class="thm-bottom-grid">
+                    <div class="thm-col-label" style="margin-top: 20px;">// Earned Badges</div>
+                    <div class="thm-badge-chips">
+                        <span class="thm-chip">SOC Apprentice</span>
+                        <span class="thm-chip">Pre-Security</span>
+                        <span class="thm-chip">Cyber Security 101</span>
+                        <span class="thm-chip">Blue Team</span>
+                        <span class="thm-chip">+20 more</span>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </section>
 
     <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: tusharswami2004@email.com</p>
-        <p>LinkedIn: linkedin.com/in/tushar-kumar-swami-785664296/</p>
+        <div class="section-header">
+            <span class="section-num">05</span>
+            <h2>Contact</h2>
+            <span class="section-line"></span>
+        </div>
+        <div class="contact-block">
+            <p class="contact-lead">Open to SOC internships and blue team roles. Let's connect.</p>
+            <div class="contact-links">
+                <a href="mailto:tusharswami2004@gmail.com" class="contact-item">
+                    <span class="contact-label">Email</span>
+                    <span class="contact-value">tusharswami2004@gmail.com</span>
+                </a>
+                <a href="https://linkedin.com/in/tushar-kumar-swami-785664296/" target="_blank" class="contact-item">
+                    <span class="contact-label">LinkedIn</span>
+                    <span class="contact-value">tushar-kumar-swami-785664296</span>
+                </a>
+                <a href="https://github.com/777wolf" target="_blank" class="contact-item">
+                    <span class="contact-label">GitHub</span>
+                    <span class="contact-value">777wolf</span>
+                </a>
+            </div>
+        </div>
     </section>
 
     <footer>
-        <p>© 2026 Tushar Kumar Swami | Cybersecurity Portfolio</p>
+        <div class="footer-inner">
+            <span class="footer-logo">[TKS]</span>
+            <span>© 2026 Tushar Kumar Swami</span>
+            <span class="footer-status">
+                <span class="status-dot"></span> Available for hire
+            </span>
+        </div>
     </footer>
 
     <script src="script.js"></script>
