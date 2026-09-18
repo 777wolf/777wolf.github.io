@@ -233,6 +233,7 @@ function openProject(projectKey) {
 
         <h3>// Tools & Technologies</h3>
         <ul>${project.tools.map(i => `<li>${i}</li>`).join("")}</ul>
+        ${project.source ? `<a class="modal-source-btn" href="${project.source}" target="_blank" rel="noopener noreferrer">View Source Code ↗</a>` : ""}
     `;
 
     modal.classList.add("show");
