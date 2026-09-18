@@ -141,41 +141,34 @@
         </div>
 
         <div class="projects-grid">
-            <div class="project-card" onclick="openProject('adlab')">
+            <div class="project-card">
                 <div class="project-num">01</div>
-                <div class="project-badge">FEATURED</div>
                 <h3>Active Directory Security Monitoring Lab</h3>
                 <p class="project-subtitle">Splunk Enterprise | Detection Engineering | MITRE ATT&CK</p>
-                <p>Domain-based lab environment with detection rules for brute force, password spraying, lateral
-                    movement, and privilege escalation. Built an AI-based login anomaly detection model with 2-sigma
-                    statistical baseline and risk scoring system.</p>
+                <p>Domain-based lab environment with detection rules for brute force, password spraying, lateral movement, and privilege escalation. Built an AI-based login anomaly detection model with 2-sigma statistical baseline and risk scoring system.</p>
                 <div class="project-tags">
                     <span>Splunk</span><span>Active Directory</span><span>SPL</span><span>MITRE ATT&CK</span>
                 </div>
                 <div class="project-footer">
-                    <span class="view-details">View Details →</span>
+                    <button type="button" class="view-details" onclick="openProject('adlab')">View Details →</button>
                 </div>
             </div>
 
-            <div class="project-card" onclick="openProject('soclab')">
+            <div class="project-card">
                 <div class="project-num">02</div>
                 <h3>Real-Time Cyber Attack Detection</h3>
                 <p class="project-subtitle">Splunk SIEM | Threat Detection | SOC Lab</p>
-                <p>SOC lab environment for real-time authentication monitoring. Configured centralized log collection
-                    from Windows systems with detection rules for brute-force, suspicious login patterns, and abnormal
-                    process execution.</p>
+                <p>SOC lab environment for real-time authentication monitoring. Configured centralized log collection from Windows systems with detection rules for brute-force, suspicious login patterns, and abnormal process execution.</p>
                 <div class="project-tags">
                     <span>Splunk</span><span>Hydra</span><span>Nmap</span><span>Kali Linux</span>
                 </div>
                 <div class="project-footer">
-                    <span class="view-details">View Details →</span>
+                    <button type="button" class="view-details" onclick="openProject('soclab')">View Details →</button>
                 </div>
             </div>
-        </div>
 
-            <div class="project-card" onclick="openProject('aiml')">
+            <div class="project-card">
                 <div class="project-num">03</div>
-                <div class="project-badge">NEW</div>
                 <h3>AI-Powered Log Anomaly Detection System</h3>
                 <p class="project-subtitle">SOC | Machine Learning | SIEM | Threat Detection</p>
                 <p>Python-based security analytics system that analyzes Windows Security Event Logs using unsupervised machine learning. Combines Isolation Forest and LOF, forwards anomaly alerts to Splunk through HEC, and visualizes results through a Flask SOC dashboard.</p>
@@ -183,9 +176,10 @@
                     <span>Python</span><span>Machine Learning</span><span>Splunk</span><span>Flask</span><span>WMI</span>
                 </div>
                 <div class="project-footer">
-                    <span class="view-details">View Details →</span>
+                    <button type="button" class="view-details" onclick="openProject('aiml')">View Details →</button>
                 </div>
             </div>
+        </div>
 
     </section>
 
