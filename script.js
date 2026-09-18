@@ -133,6 +133,47 @@ const projects = {
             "VirtualBox"
         ]
     },
+    aiml: {
+        title: "AI-Powered Log Anomaly Detection System for SOC Environments",
+        subtitle: "SOC | Machine Learning | SIEM | Threat Detection",
+        environment: [
+            "Windows Host (ML processing + Flask dashboard)",
+            "Windows 10 VM (Security Event Log source)",
+            "Ubuntu VM (Splunk SIEM)",
+            "Kali Linux VM (Attack Simulation)",
+            "Host-only virtualized lab network"
+        ],
+        attacks: [
+            "Authentication anomaly simulation",
+            "Failed login activity monitoring",
+            "Security event behavior analysis"
+        ],
+        detection: [
+            "WMI-based Windows Security Event Log collection",
+            "1-minute behavioral feature windows",
+            "Isolation Forest anomaly detection",
+            "Local Outlier Factor (LOF) analysis",
+            "Combined model agreement classification",
+            "HIGH / MEDIUM / NORMAL alert prioritization",
+            "11 manually verified attack windows used as evaluation ground truth",
+            "100% recall on the current evaluation set"
+        ],
+        tools: [
+            "Python",
+            "Pandas",
+            "NumPy",
+            "Scikit-learn",
+            "Isolation Forest",
+            "Local Outlier Factor",
+            "Flask",
+            "Splunk",
+            "Splunk HEC",
+            "WMI",
+            "Windows Security Event Logs"
+        ],
+        source: "https://github.com/777wolf/AI-Powered-Log-Anomaly-Detection-System-for-SOC-Environments-"
+    },
+
     soclab: {
         title: "Real-Time Cyber Attack Detection using Splunk SIEM",
         subtitle: "Splunk SIEM | Threat Detection | SOC Lab",
