@@ -472,23 +472,19 @@ section {
 =========================== */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 20px;
-    align-items: stretch;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
 }
 
 .project-card {
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: 4px;
-    padding: 26px;
-    cursor: default;
+    padding: 30px;
+    cursor: pointer;
     transition: all 0.3s;
     position: relative;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
 }
 
 .project-card::before {
@@ -568,7 +564,6 @@ section {
 .project-footer {
     border-top: 1px solid var(--border);
     padding-top: 14px;
-    margin-top: auto;
 }
 
 .view-details {
@@ -577,15 +572,9 @@ section {
     color: var(--text-dim);
     letter-spacing: 1px;
     transition: color 0.2s;
-    background: none;
-    border: 0;
-    padding: 0;
-    cursor: pointer;
-    text-align: left;
 }
 
-.project-card:hover .view-details,
-.view-details:hover {
+.project-card:hover .view-details {
     color: var(--green);
 }
 
