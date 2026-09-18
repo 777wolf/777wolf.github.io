@@ -213,7 +213,7 @@ const projects = {
 const modal = document.getElementById("projectModal");
 const modalContent = document.getElementById("modalContent");
 
-function openProject(projectKey) {
+window.openProject = function openProject(projectKey) {
     const project = projects[projectKey];
     if (!project) return;
 
@@ -240,7 +240,7 @@ function openProject(projectKey) {
     document.body.style.overflow = "hidden";
 }
 
-function closeProject() {
+window.closeProject = function closeProject() {
     modal.classList.remove("show");
     document.body.style.overflow = "auto";
 }
