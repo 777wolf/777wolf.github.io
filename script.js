@@ -131,7 +131,8 @@ const projects = {
             "SPL (Search Processing Language)",
             "MITRE ATT&CK Mapping",
             "VirtualBox"
-        ]
+        ],
+        source: "https://github.com/777wolf/Active-Directory-Security-Monitoring-Lab-Splunk-Detection-Engineering.git"
     },
     aiml: {
         title: "AI-Powered Log Anomaly Detection System for SOC Environments",
@@ -202,7 +203,8 @@ const projects = {
             "Hydra",
             "Nmap",
             "VirtualBox"
-        ]
+        ],
+        source: "https://github.com/777wolf/soc-splunk-real-time-attack-detection.git"
     }
 };
 
